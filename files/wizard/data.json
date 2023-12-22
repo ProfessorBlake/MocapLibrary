@@ -1,0 +1,14 @@
+{
+    "name": "Wizard",
+    "creator_name": "AnthonyMyers",
+    "creator_url": "https://opengameart.org/content/wizard-4",
+    "folder_name": "wizard",
+    "model_name": "wizard.glb",
+    "material_diffusion": "Done.bmp",
+    "material_normal": "BaseNMtexture.bmp",
+    "material_ao": "",
+    "material_height": "",
+    "default_scale": 1.75,
+    "model_height_offset": -2,
+    "liked": false
+}

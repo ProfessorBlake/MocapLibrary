@@ -1,5 +1,6 @@
 {
     "models":[
-        "treasure_chest"
+        "treasure_chest",
+        "wizard"
     ]
 }

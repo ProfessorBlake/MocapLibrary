@@ -175,7 +175,7 @@ function render() {
         // so something moves
         for(var i = 0; i < scene.children.length; i++)
         {
-            scene.children[i].rotation.y = Math.sin(((Date.now() - startTime) * 0.0003) + scene.startRot) * 0.5;
+            scene.children[i].rotation.y = Math.sin(((Date.now() - startTime) * 0.0005) + scene.startRot) * 0.5;
         }
 
         //Scale
@@ -295,26 +295,28 @@ function addModel(data){
     loader.load(path, async function ( gltf ) {
 
         const model = gltf.scene;
-        model.position.set( 0, 0.1, 0 );
+        model.position.set( 0, data.model_height_offset != "" ? data.model_height_offset : 0, 0 );
         model.rotation.set(0, Math.random() * maxObjRotate * (Math.random() > 0.5 ? -1 : 1), 0);
-        model.scale.set( 20, 20, 20 );
+        model.scale.set( data.default_scale != "" ? data.default_scale : 1,
+        data.default_scale != "" ? data.default_scale : 1,
+        data.default_scale != "" ? data.default_scale : 1);
 
         //MATERIAL
         const textureLoader = new THREE.TextureLoader();
-        const diffuseMap = textureLoader.load('./files/treasure_chest/Treasurechest_DIFF.png');
+        const diffuseMap = textureLoader.load(`./files/${data.folder_name}/${data.material_diffusion}`);
         diffuseMap.colorSpace = THREE.SRGBColorSpace;
-        const displacement = textureLoader.load('./files/textures/alum_height.png');
-        const aomap = textureLoader.load('./files/treasure_chest/Treasurechest_AO.png)');
-        const normalMap = textureLoader.load( './files/treasure_chest/Treasurechest_NRM.png' );
+        const displacement = textureLoader.load(`./files/${data.folder_name}/${data.material_height}`);
+        const aomap = textureLoader.load(`./files/${data.folder_name}/${data.material_ao}`);
+        const normalMap = textureLoader.load( `./files/${data.folder_name}/${data.material_normal}`);
         const mat = new THREE.MeshStandardMaterial({
             roughness: 0.95,
             metalness: 0.1,
-            map: diffuseMap,
-            normalMap: normalMap,
+            map: data.material_diffusion != "" ? diffuseMap: null,
+            normalMap: data.material_normal != "" ? normalMap: null,
+            aoMap: data.material_ao != "" ? aomap : null,
             normalScale: new THREE.Vector2( 0.05, 0.05 ),
-            aoMap : aomap,
-            // displacementMap: displacement,
-            // displacementScale: 0.01
+            displacementMap: data.height != "" ? displacement : null,
+            displacementScale: 0.01
           })
 
         model.material = mat;

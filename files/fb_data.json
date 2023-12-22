@@ -3,6 +3,10 @@
         "treasure_chest":{
             "id": 0,
             "likes": 0
+        },
+        "wizard":{
+            "id": 1,
+            "likes": 0
         }
     }
 }

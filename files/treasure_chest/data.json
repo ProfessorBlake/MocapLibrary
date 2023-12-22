@@ -7,6 +7,8 @@
     "material_diffusion": "Treasurechest_DIFF.png",
     "material_normal": "Treasurechest_NRM.png",
     "material_ao": "Treasurechest_AO.png",
-    "default_scale": 20,
+    "material_height": "",
+    "default_scale": 22,
+    "model_height_offset": 0,
     "liked": false
 }
