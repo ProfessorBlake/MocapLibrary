@@ -175,7 +175,7 @@ function render() {
         // so something moves
         for(var i = 0; i < scene.children.length; i++)
         {
-            scene.children[i].rotation.y = Math.sin(((Date.now() - startTime) * 0.0001) + scene.startRot) * 0.5;
+            scene.children[i].rotation.y = Math.sin(((Date.now() - startTime) * 0.0003) + scene.startRot) * 0.5;
         }
 
         //Scale
