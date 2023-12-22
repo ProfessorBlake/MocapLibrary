@@ -1,0 +1,12 @@
+{
+    "name": "Treasure Chest",
+    "creator_name": "mastahcez",
+    "creator_url": "https://opengameart.org/content/treasure-chest-3",
+    "folder_name": "treasure_chest",
+    "model_name": "chest.glb",
+    "material_diffusion": "Treasurechest_DIFF.png",
+    "material_normal": "Treasurechest_NRM.png",
+    "material_ao": "Treasurechest_AO.png",
+    "default_scale": 20,
+    "liked": false
+}

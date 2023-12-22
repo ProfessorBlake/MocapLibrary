@@ -1,0 +1,116 @@
+* { 
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: #444;
+}
+
+a {
+    color: rgb(17, 0, 255);
+    text-decoration: none;
+}
+
+#content {
+    position: absolute;
+    top: 0; width: 100%;
+    z-index: 1;
+    padding: 0.5em;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#c {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.list-item {
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em;
+    box-shadow: 1px 2px 4px 0px rgba(0,0,0,0.25);
+    border:1px solid orange;
+    border-radius: 15px;
+}
+/*Model*/
+.list-item > div:nth-child(1) {
+    width: 250px;
+    height: 250px;
+}
+/*Description*/
+.list-item > div:nth-child(2) {
+    background-color: orange;
+    color: black;
+    padding: 0.4em;
+    font-family: sans-serif;
+    font-size: large;
+    width: 100%;
+    margin-top: 0.5em;
+    border-radius: 5px;
+}
+
+.likes-container{
+    display: flex;
+    justify-content: end;
+    padding: 1px;
+}
+
+.likes-button{
+    color: pink;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.likes-heart{
+    width: 0.8em;
+    float: right;
+    font-size: 1em;
+}
+.likes-button a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.likes-button a:hover:not(.liked){
+    color: rgb(255, 30, 0);
+    cursor: pointer;
+}
+
+.likes-button .liked{
+    color:rgb(138, 0, 0);
+    cursor:default;
+}
+
+.likes-count{
+    color: rgb(0, 0, 0);
+    font-size: 0.6em;
+    padding-top: 8px;
+    padding-left: 3px;
+    font-family: 'Bowlby One SC', sans-serif;
+}
+
+.pop{
+    animation-name: ani-pop;
+    animation-duration: 1s;
+}
+
+.likes-selected > .likes-button,
+.likes-selected > .likes-count
+{
+    color: red;
+    font-size: 0.75em;
+    text-align: right;
+    padding-top: 5px;
+}
+
+@keyframes ani-pop {
+    0% {scale: 100%;}
+    25% {scale: 155%;}
+    100% {scale: 100%;}
+  }
