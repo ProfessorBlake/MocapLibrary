@@ -115,6 +115,21 @@ function render() {
 
 }
 
+let licenseData;
+function loadLicenseData(){
+    fetch('./files/licenses.json')
+    .then((response) => response.json())
+    .then((json) => {
+        try{
+            licenseData = json;
+            //console.log(`Loaded Licenses: ${JSON.stringify(licenseData)}`);
+        }
+        catch(e){
+            console.log(`Unable to load license: ${e}` )
+        }
+    });
+}
+loadLicenseData();
 
 function addModel(data){
     const scene = new THREE.Scene();
@@ -130,20 +145,23 @@ function addModel(data){
     sceneElement.onmouseleave = function(){handleMouseOver(null);}
 
     const descriptionElement = document.createElement( 'div' );
+
     var likes = 0;
     if (like_data){
         likes = like_data[data.folder_name].likes;
         //console.log(likes);
     }
+
     descriptionElement.innerHTML = 
     `<b>${data.name}</b><br>
-    <small>Created by:</small><a href="${data.creator_url}"target="_blank"> ${data.creator_name} </a><br>
+    <small>Created by:</small><a href="${data.creator_url}"target="_blank"> ${data.creator_name}</a><br>
     <div class="likes-container">
         <span class="likes-button material-icons">
             <a href="#" class="likes-heart">favorite_border</a>
         </span>
         <span class="likes-count" id="${data.folder_name}">${likes.toString()}</span>
     </div>
+    <a href="${licenseData[data.license].url}"target="_blank"><img src="${licenseData[data.license].img}" class="attribution-image"></a>
     `;
 
     descriptionElement.addEventListener('click', function(){
@@ -345,5 +363,7 @@ function like(item_data){
         console.warn('Something went wrong.', error);
     });
 }
+
+
 
 get_likes();

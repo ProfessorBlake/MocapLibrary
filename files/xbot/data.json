@@ -11,5 +11,6 @@
     "material_height": "",
     "default_scale": 0.02,
     "model_height_offset": -2,
-    "liked": false
+    "liked": false,
+    "license": "cc0"
 }

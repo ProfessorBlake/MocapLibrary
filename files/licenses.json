@@ -1,0 +1,14 @@
+{
+    "cc0": {
+        "img": "files/licenses/cc0.png",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "ccbysa": {
+        "img": "./files/licenses/ccbysa.png",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1"
+    },
+    "ccbyncnd":{
+        "img": "./files/licenses/ccbyncnd.png",
+        "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1"
+    }
+}
