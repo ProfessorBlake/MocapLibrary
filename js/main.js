@@ -286,12 +286,6 @@ function loadModels(){
 
 loadModels();
 
-async function getTestData() {
-    const response = await fetch("https://quinnipiac-mocapwebsite-default-rtdb.firebaseio.com/flash.json");
-    const movies = await response.json();
-    console.log(movies);
-  }
-
 function updateLikes(){
     const like_elements = document.getElementsByClassName("likes-count");
     //Loop through like counts on page to update with new like data
