@@ -290,12 +290,15 @@ function updateLikes(){
     const like_elements = document.getElementsByClassName("likes-count");
     //Loop through like counts on page to update with new like data
     Array.from(like_elements).forEach((el) => {
-        console.log(`LIKE DATA: ${el.id} / ${like_data[el.id].likes}`)
-        el.innerHTML = `${like_data[el.id].likes}`
-
-        var newone = el.cloneNode(true);
-        el.parentNode.replaceChild(newone, el);
-        newone.style.animation="ani-pop 0.2s linear 1 forwards";
+        //Only update if new value
+        if(el.innerHTML != like_data[el.id].likes.toString()){
+            // console.log(`Like compare: ${oldLikes} / ${like_data[el.id].likes}`)
+            // console.log(`LIKE DATA: ${el.id} / ${like_data[el.id].likes}`)
+            el.innerHTML = `${like_data[el.id].likes}`
+            var newone = el.cloneNode(true);
+            el.parentNode.replaceChild(newone, el);
+            newone.style.animation="ani-pop 0.2s linear 1 forwards";
+        }
     });
 }
 
