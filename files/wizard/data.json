@@ -4,6 +4,7 @@
     "creator_url": "https://opengameart.org/content/wizard-4",
     "folder_name": "wizard",
     "model_name": "wizard.glb",
+    "textures_baked": false,
     "material_diffusion": "lightened2.bmp",
     "material_normal": "BaseNMtexture.png",
     "material_ao": "",

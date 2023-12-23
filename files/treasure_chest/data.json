@@ -4,6 +4,7 @@
     "creator_url": "https://opengameart.org/content/treasure-chest-3",
     "folder_name": "treasure_chest",
     "model_name": "chest.glb",
+    "textures_baked": false,
     "material_diffusion": "Treasurechest_DIFF.png",
     "material_normal": "Treasurechest_NRM.png",
     "material_ao": "Treasurechest_AO.png",

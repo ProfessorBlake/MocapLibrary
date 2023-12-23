@@ -7,6 +7,10 @@
         "wizard":{
             "id": 1,
             "likes": 0
+        },
+        "xbot":{
+            "id": 2,
+            "likes": 0
         }
     }
 }

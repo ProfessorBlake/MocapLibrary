@@ -133,7 +133,7 @@ function addModel(data){
     var likes = 0;
     if (like_data){
         likes = like_data[data.folder_name].likes;
-        console.log(likes);
+        //console.log(likes);
     }
     descriptionElement.innerHTML = 
     `<b>${data.name}</b><br>
@@ -171,27 +171,26 @@ function addModel(data){
     camera.position.z = 5;
     scene.userData.camera = camera;
 
-    // add one random mesh to each scene
-    // const geometry = geometries[ geometries.length * Math.random() | 0 ];
+    //=====================================================
+    // Load models
+    //=====================================================
 
-    const material = new THREE.MeshStandardMaterial( {
+    var loader;
+    var mdlType;
 
-        color: new THREE.Color().setHSL( Math.random(), 1, 0.75, THREE.SRGBColorSpace ),
-        roughness: 0.1,
-        metalness: 0,
-        flatShading: false
-
-    } );
-
-    // scene.add( new THREE.Mesh( geometry, material ) );
-
-    // Custom model
-    var loader = new GLTFLoader();
+    if(data.model_name.endsWith('glb')){
+        loader = new GLTFLoader();
+        mdlType = 'gltf';
+    }
+    else if(data.model_name.endsWith('fbx')){
+        loader = new FBXLoader();
+        mdlType = 'fbx';
+    }
     const path = `./files/${data.folder_name}/${data.model_name}`;
     console.log(`Loading ${data.name} from ${path}`);
-    loader.load(path, async function ( gltf ) {
 
-        const model = gltf.scene;
+    loader.load(path, async function ( mdl ) {
+        const model = mdlType == 'gltf' ? mdl.scene : mdl;
         model.position.set( 0, data.model_height_offset != "" ? data.model_height_offset : 0, 0 );
         model.rotation.set(0, Math.random() * maxObjRotate * (Math.random() > 0.5 ? -1 : 1), 0);
         model.scale.set( data.default_scale != "" ? data.default_scale : 1,
@@ -216,8 +215,6 @@ function addModel(data){
             displacementScale: 0.01
           })
 
-        model.material = mat;
-
         scene.startRot = model.rotation.y;
 
         let directionalLight = new THREE.DirectionalLight( 0xffffff, 10 );
@@ -226,9 +223,12 @@ function addModel(data){
 
         scene.add( model );
 
-        model.traverse((o) => {
-            if (o.isMesh) o.material = mat;
-          });
+        if(!data.textures_baked)
+        {
+            model.traverse((o) => {
+                if (o.isMesh) o.material = mat;
+            });
+        }
 
         //mixer = new THREE.AnimationMixer( model );
         //mixer.clipAction( gltf.animations[ 0 ] ).play();
@@ -313,7 +313,7 @@ async function get_likes() {
             return;
         }
         response.json().then(function (data) {
-            console.log(data);
+            //console.log(data);
             like_data = data;
             updateLikes();
         });
@@ -339,7 +339,7 @@ function like(item_data){
     }).then(function (data) {
         console.log(`PUT response: ${JSON.stringify(item_data.folder_name)} / ${data}`);
         like_data[`${item_data.folder_name}`].likes = data;
-        console.log(like_data);
+        //console.log(like_data);
         updateLikes();
     }).catch(function (error) {
         console.warn('Something went wrong.', error);

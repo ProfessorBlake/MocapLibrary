@@ -4,11 +4,12 @@
     "creator_url": "https://www.mixamo.com/#/?page=3&type=Character",
     "folder_name": "xbot",
     "model_name": "xbot.fbx",
+    "textures_baked": true,
     "material_diffusion": "",
     "material_normal": "",
     "material_ao": "",
     "material_height": "",
-    "default_scale": 1,
-    "model_height_offset": 0,
+    "default_scale": 0.02,
+    "model_height_offset": -2,
     "liked": false
 }

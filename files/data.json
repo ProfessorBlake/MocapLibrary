@@ -1,6 +1,7 @@
 {
     "models":[
         "treasure_chest",
-        "wizard"
+        "wizard",
+        "xbot"
     ]
 }
