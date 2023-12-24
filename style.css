@@ -145,6 +145,7 @@ a {
 /*Changelog*/
 .Developerlog{
     padding: 20px;
+    margin-left: 150px;
     overflow-x: hidden;
 }
 
@@ -173,6 +174,31 @@ a {
     font-family: 'Expletus Sans', sans-serif;
     padding: 10px;
     font-size: 1.1em;
+}
+
+.log-nav{
+    position: absolute;
+    left:10px;
+    width: 150px;
+    top: 100px;
+    bottom: 0;
+    
+}
+
+.log-nav ul{
+    padding-left: 15px;
+}
+
+.log-nav li{
+    list-style: none;
+    font-size: 0.9em;
+    padding-left: 5px;
+}
+
+.log-nav li a{
+    list-style: none;
+    font-size: 0.8em;
+    padding-left: 5px;
 }
 
 @keyframes post-open {
