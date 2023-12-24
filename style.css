@@ -6,6 +6,7 @@
 body {
     background-color: #fff;
     color: #444;
+    overflow-x: hidden;
 }
 
 a {
@@ -109,8 +110,72 @@ a {
     padding-top: 5px;
 }
 
+.attribution-text{
+    font-size: 0.5em;
+    max-width: 200px;
+    color: black;
+}
+
+.attribution-image{
+    width: 50px;
+}
+
+.attribution-image :hover{
+    width: 50px;
+}
+
+.footer,
+.footer a,
+.footer a :visited,
+.footer a :hover{
+    position: absolute;
+    bottom: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    color:rgb(130, 130, 106);
+    width: 200px;
+    height:20px;
+}
+
 @keyframes ani-pop {
     0% {scale: 100%;}
     25% {scale: 155%;}
     100% {scale: 100%;}
-  }
+}
+
+/*Changelog*/
+.Developerlog{
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.log-post{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.post-title{
+    font-family: 'Bowlby One SC', sans-serif;
+    color:rgb(184, 95, 151);
+    font-size: 1.25em;
+    padding: 5px;
+    margin-left: 50px;
+}
+
+.post-date{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7em;
+    color: rgb(52, 52, 52);
+}
+
+.post-body{
+    font-family: 'Expletus Sans', sans-serif;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+@keyframes post-open {
+    0% {margin-left: 100%;margin-right:-100%;background-color: (255, 233, 154);}
+    100% {margin-left: 0%;margin-right:0%;}
+}

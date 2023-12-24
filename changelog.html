@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinnipiac GDD Mocap Library </title>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Expletus+Sans&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Developer Log</h1>
+    <div class="Developerlog" id="log">
+        
+    </div>
+</body>
+<script>
+    const entries = [
+    {
+            'date': '12/23/2023',
+            'title': 'Licensing Assets',
+            'body': 'Today I added the requirement for assets to indicate a license, so that users can ensure the assets they contribute are used only in accordance with their intentions. In the future I plan to add information about how to properly credit the creator for each license type, so users can be confident that they are properly adhering to the license.'
+        },
+        {
+            'date': '12/23/2023',
+            'title': 'Likes!',
+            'body': "I added a 'like' features as more of a learning experience than anything else, but it's fun to see people appreciate your work as well so it might help motivate students to contribute as well. This feature uses <a href='https://firebase.google.com/'>Google Firebase</a> realtime database to to store a JSON list of data about each asset in the library.<br> There isn't any kind of measure in place to store which assets a user has liked, because no user information is saved at all, so a use can like an asset as much as they like. The only minor preventative measure that prevents spamming the like button is a client-side check to see if they've liked the asset in their current session. If they reload the page, they can like the asset again. But the likes are just for fun so it shouldn't cause any problems." 
+        },
+        {
+            'date': '12/23/2023',
+            'title': 'Log Started',
+            'body': "I've added a Developer log to this as an additional resource to students who might be interested in the process for creating this resource. I'll try to add meaningful comments to Developers as I develop the platform and keep it educational."
+        }
+    ]
+    
+    const log = document.getElementById('log');
+    var itemsPerPage = 10;
+    var startingItem = 0;
+    for(let i = startingItem; i < itemsPerPage; i++){
+        if(i < entries.length){
+            const post = document.createElement( 'div' );
+            post.className = 'log-post';
+            post.innerHTML = `
+            <span class="post-date">${entries[i].date}</span><span class="post-title">${entries[i].title}</span>
+            <div class="post-body">${entries[i].body}</div>`;
+            post.style.animation = `${(i+1) * 0.4}s post-open`;
+            log.appendChild(post);
+        }
+    }
+
+</script>
+</html>
