@@ -128,7 +128,7 @@ a {
 .footer a,
 .footer a :visited,
 .footer a :hover{
-    position: absolute;
+    position: fixed;
     bottom: 5px;
     font-family: 'Courier New', Courier, monospace;
     color:rgb(130, 130, 106);

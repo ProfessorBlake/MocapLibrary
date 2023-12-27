@@ -1,0 +1,16 @@
+{
+    "name": "Among Us",
+    "creator_name": "Professor Blake",
+    "creator_url": "https://mywebspace.quinnipiac.edu/cblake",
+    "folder_name": "among",
+    "model_name": "among2.fbx",
+    "textures_baked": false,
+    "material_diffusion": "among_diff.png",
+    "material_normal": "",
+    "material_ao": "",
+    "material_height": "",
+    "default_scale": 0.01,
+    "model_height_offset": -2,
+    "liked": false,
+    "license": "cc0"
+}

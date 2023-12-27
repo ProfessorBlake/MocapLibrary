@@ -231,7 +231,7 @@ function addModel(data){
             normalScale: new THREE.Vector2( 0.05, 0.05 ),
             displacementMap: data.height != "" ? displacement : null,
             displacementScale: 0.01
-          })
+        });        
 
         scene.startRot = model.rotation.y;
 
